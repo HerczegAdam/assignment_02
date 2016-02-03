@@ -124,11 +124,11 @@ class TestAssignmentTwo_Strings(unittest.TestCase):
         """
 
         s = 'The current index is {}'
-        self.assertEqual(___,isinstance(s, str))
+        self.assertEqual(True,isinstance(s, str))
 
         i = 0
 
-        truth = 'The current index is i' # Replace the ____
+        truth = 'The current index is {}'.format(i) # Replace the ____
         self.assertEqual(truth, s.format(i))
 
     def test_string_cases(self):
@@ -156,9 +156,9 @@ class TestAssignmentTwo_Strings(unittest.TestCase):
         s = '{}'
 
         # Check to see what the heck 's' is
-        self.assertEqual(____, isinstance(s, str))
+        self.assertEqual(True, isinstance(s, str))
 
-        rounded_pi = 3.142
+        rounded_pi = '3.1416'
         self.assertEqual(rounded_pi, s.format(round(pi, 4)))
 
     def test_translation(self):
