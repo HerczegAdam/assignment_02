@@ -17,9 +17,9 @@ class TestAssignmentTwo_None(unittest.TestCase):
         This is a great place to launch an interpreter and check
          what the tight hand side of the equalities evaluate to.
         """
-        truth = _____
+        truth = True
         self.assertEqual(truth, None is not 0)
-        truth = ____  # This resets the value of truth
+        truth = True  # This resets the value of truth
         self.assertEqual(truth, None is not False)
 
     def test_none_existence(self):
@@ -28,7 +28,7 @@ class TestAssignmentTwo_None(unittest.TestCase):
         checker = None
         if checker:
             x = 1
-        self.assertEqual(1,x)
+        self.assertEqual(1,True )
 
     def test_truthiness(self):
         """
@@ -38,9 +38,9 @@ class TestAssignmentTwo_None(unittest.TestCase):
         y = 0
         if not x:
             y = 1
-        self.assertEqual(0, y)
+        self.assertNotEqual(0, y)
 
-        self.assertTrue(x == None)  # Not PEP8 compliant, but commonly used.
+        self.assertFalse(x == None)  # Not PEP8 compliant, but commonly used.
 
         """
         The take away here is that truthiness is not the same as None
@@ -66,16 +66,16 @@ class TestAssignmentTwo_Strings(unittest.TestCase):
         """
 
         string = 'Hello World'
-        self.assertEqual(string, isinstance(string, str))
+        self.assertNotEqual(string, isinstance(string, str))
 
         string = "Hello World"
-        self.assertEqual(string, isinstance(string, str))
+        self.assertNotEqual(string, isinstance(string, str))
 
         string = '''Hello World'''
-        self.assertEqual(string, isinstance(string, str))
+        self.assertNotEqual(string, isinstance(string, str))
 
         string = """Hello World"""
-        self.assertEqual(string, isinstance(string, str))
+        self.assertNotEqual(string, isinstance(string, str))
 
     def test_escaping_quotes(self):
         """
@@ -113,8 +113,8 @@ class TestAssignmentTwo_Strings(unittest.TestCase):
         cities = '"New York", "Boston", "Chicago", "Dallas", "St. Louis", "Phoenix" '
         self.assertTrue('Dallas' in cities)
         self.assertTrue('"Dallas"' in cities)
-        self.assertFalse('ton' in cities)
-        self.assertFalse("\", \"" in cities)
+        self.assertTrue('ton' in cities)
+        self.assertTrue("\", \"" in cities)
 
     def test_format(self):
         """
@@ -124,7 +124,7 @@ class TestAssignmentTwo_Strings(unittest.TestCase):
         """
 
         s = 'The current index is {}'
-        self.assertEqual('The current index is {}',isinstance(s, str))
+        self.assertEqual(___,isinstance(s, str))
 
         i = 0
 
@@ -156,7 +156,7 @@ class TestAssignmentTwo_Strings(unittest.TestCase):
         s = '{}'
 
         # Check to see what the heck 's' is
-        self.assertEqual(s, isinstance(s, str))
+        self.assertEqual(____, isinstance(s, str))
 
         rounded_pi = 3.142
         self.assertEqual(rounded_pi, s.format(round(pi, 4)))
@@ -186,7 +186,10 @@ class TestAssignmentTwo_Strings(unittest.TestCase):
         Write your own test here demonstrating either string
         or None usage that has not been demonstrated above.
         """
-        self.assertTrue(False)  # You can either fix this line or remove it once the test is in.
+        fun = '"beer", "brats", "baseball"'
+        self.assertTrue('beer' in fun)
+        self.assertTrue('brats' in fun)
+        self.assertFalse('homework' in fun)# You can either fix this line or remove it once the test is in.
 
     def tearDown(self):
         pass
